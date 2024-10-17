@@ -1,0 +1,10 @@
+<div class="container-fluid bg-secondary p-5">
+    <div class="container pb-5 mb-5" *ngIf="citta">
+        <h1 class="pt-5 mb-4">{{citta.nome}}</h1>
+        <img class="" [src]="citta.img" alt="{{citta.nome}}" class="card-img-top">
+        <p class="mt-3">{{citta.descrizione}}</p>
+        <div class="d-flex align-items-center px-3 pb-5 mb-5">
+            <p class="px-3 d-flex fw-bold">Visited: <span class="dot rounded-5 mx-2" [ngClass]="{'bg-success': citta.visitata, 'bg-danger': !citta.visitata}"></span></p>
+          </div>
+    </div>
+</div>

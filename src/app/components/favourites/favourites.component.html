@@ -1,0 +1,7 @@
+<div class="favourites text-light text-center border border-2 border-light rounded-3">
+    <h3 class="mt-3">FAVOURITES</h3>
+    <div class="" *ngFor="let item of cittaFavourites">
+        <h4>{{item.nome}}</h4>
+        <p class="px-3 d-flex">Visited: <span class="dot rounded-5 mx-2" [ngClass]="{'bg-success': item.visitata, 'bg-danger': !item.visitata}"></span></p>
+    </div>
+</div>

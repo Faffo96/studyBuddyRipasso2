@@ -1,0 +1,20 @@
+<div class="container-fluid px-4 bg-dark">
+    <h1 class="text-light text-center py-5">Le mie mete</h1>
+    <div class="box d-flex justify-content-center">
+        <div class="container px-0 d-flex gap-3 flex-wrap">
+
+            <div *ngFor="let item of citta" class="card mb-3">
+                <img [src]="item.img" alt="{{item.nome}}" class="card-img-top" (click)="addToFavourites(item)">
+                <h3 class="text-center mt-2">{{item.nome}}</h3>
+                <p class="p-3 my-fs-1">{{item.descrizione}}</p>
+                <div class="d-flex align-items-center px-3">
+                    <p class="pe-2 d-flex">Visited: <span class="dot rounded-5 mx-2" [ngClass]="{'bg-success': item.visitata, 'bg-danger': !item.visitata}"></span></p>
+                    <a class="btn btn-secondary my-fs-2 me-2" [routerLink]="['/details', item.id]">Dettagli</a>
+                    <button class="btn btn-primary my-fs-2" (click)="switchVisited(item.id)">Toggle</button>
+                </div>
+            </div>
+
+        </div>
+        <app-favourites></app-favourites>
+    </div>
+</div>
